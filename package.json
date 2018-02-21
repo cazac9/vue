@@ -1,0 +1,27 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "no test specified",
+    "build": "browserify -t vueify -e main.js -o build.js",
+    "watch": "watchify -t vueify -e main.js -o build.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "*",
+    "elasticsearch": "*",
+    "vue": "*",
+    "vue-router": "*",
+    "vueify": "*",
+    "vuetify": "*",
+    "watchify": "*"
+  },
+  "browser": {
+    "vue": "vue/dist/vue.min.js",
+    "vue-router": "vue-router/dist/vue-router.min.js",
+    "vuetify": "vuetify/dist/vuetify.min.js"
+  }
+}

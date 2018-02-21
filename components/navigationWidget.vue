@@ -4,7 +4,8 @@
 		return {
 			siteRoutes:[
 				{ path : "/home", title:"Home" },
-				{ path : "/apl", title:"Application" }
+				{ path : "/apl", title:"Application" },
+				{ path : "/oss", title:"Oss" }
 			]
 		}
 	}, 

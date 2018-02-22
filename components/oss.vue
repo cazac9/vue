@@ -6,8 +6,8 @@ var elasticsearch = require('elasticsearch');
 				keywordInput:'',
 				resultUrls:[],
 				searchTemplates:[
-					{ url: "https://duckduckgo.com/?q=", imgSrc:"./images/ddg.png" },
-					{ url: "https://en.wikipedia.org/wiki/Special:Search?search=", imgSrc:"./images/wiki.png" }
+					{ url: "https://duckduckgo.com/?q={keywordInput}", imgSrc:"./images/ddg.png", name: "Duckduckgo" },
+					{ url: "https://en.wikipedia.org/wiki/Special:Search?search={keywordInput}", imgSrc:"./images/wiki.png", name:"Wikipedia" }
 				]
 			}
 	}
@@ -27,7 +27,7 @@ var elasticsearch = require('elasticsearch');
 		</v-text-field>
 		</v-flex>
 		<v-flex xs6 v-show="keywordInput.length > 0">
-			<label>Search for {{keywordInput}} with:</label>
+			<label>Search for <b>{{keywordInput}}</b> with:</label>
 		</v-flex>
 		<v-flex xs6 v-show="keywordInput.length > 0">
 			<v-list two-line>
@@ -39,7 +39,7 @@ var elasticsearch = require('elasticsearch');
 	              </v-list-tile-avatar>
 	              <v-list-tile-content>
 	                <v-list-tile-title >
-						<a :href="item.url + keywordInput" :title="item.url + keywordInput" target="_blank">{{item.url + keywordInput}}</a>
+						<a :href="item.url.replace('{keywordInput}', keywordInput)" :title="item.url.replace('{keywordInput}', keywordInput)" target="_blank">{{item.name}}</a>
 	                </v-list-tile-title>
 	              </v-list-tile-content>
 	            </v-list-tile>

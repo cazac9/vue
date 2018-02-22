@@ -6,7 +6,7 @@ var elasticsearch = require('elasticsearch');
 				keywordInput:'',
 				resultUrls:[],
 				searchTemplates:[
-					{ url: "https://duckduckgo.com/?q={keywordInput}", imgSrc:"./images/ddg.png", name: "Duckduckgo" },
+					{ url: "https://duckduckgo.com/?q={keywordInput}", imgSrc:"./images/ddg.png", name: "Duck Duck GO" },
 					{ url: "https://en.wikipedia.org/wiki/Special:Search?search={keywordInput}", imgSrc:"./images/wiki.png", name:"Wikipedia" }
 				]
 			}
